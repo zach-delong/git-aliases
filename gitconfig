@@ -13,3 +13,6 @@
 
   # show-commit-diff
   show-diff = "!f() { hash=${1-HEAD}; git show -q $hash; git difftool $hash~1 $hash; }; f"
+
+  # checkout a new feature branch
+  feature = "!f() { name=${1-tmp}; git checkout -b feature/$name; }; f"
