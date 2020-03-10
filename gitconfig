@@ -10,3 +10,6 @@
 
   # Fetch
   f = fetch
+
+  # show-commit-diff
+  show-diff = "!f() { hash=${1-HEAD}; git show -q $1; git difftool $1~1 $1; }; f"
