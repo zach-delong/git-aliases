@@ -16,3 +16,6 @@
 
   # checkout a new feature branch
   feature = "!f() { name=${1-tmp}; git checkout -b feature/$name; }; f"
+  
+  # interactive rebase the currently checked out branch against master
+  rib = rebase -i master
