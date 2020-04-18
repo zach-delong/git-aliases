@@ -29,6 +29,12 @@ Checks out a specific branch or commit. Short-hand for `git checkout <branch|com
 ### Description
 Display the name of the currently checked out branch.
 
+## git comp [pull_arguments]
+### Example Usage
+`git comp --rebase`
+### Description
+Checks out the master branch and executes a pull. If any `pull_arguments` are specified, these will be proxied to the `git pull` command.
+
 ## git graph
 ### Example Usage
 `git graph`

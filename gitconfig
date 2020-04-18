@@ -1,6 +1,9 @@
 [alias]
 	co = checkout
 
+  # Check out master and pull
+  comp = "!f() { git checkout master; git pull $@; }; f"
+
   # Get current branch name
   currentbranch = rev-parse --abbrev-ref HEAD
 
