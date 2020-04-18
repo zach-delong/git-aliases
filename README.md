@@ -64,3 +64,9 @@ Begins the process of interactive rebasing the current branch against the `branc
 `git show-diff abc123`
 ### Description
 Shows the changes introduced by the commit specified by the `commit_hash` argument. Defaults to `HEAD` if no `commit_hash` argument is specified.
+
+## spp [pull_arguments]
+### Example Usage
+`git spp --rebase`
+### Description
+Stashes local changes, pulls, then pops stash to re-apply the stashed changes. The `git pull` command can be passed arguments using the `pull_arguments` specified after `git spp`

@@ -23,6 +23,9 @@
   # interactive rebase the currently checked out branch against the branch specified to the rib command, or master is a branch is not specified
   rib = "!f() { branch=${1-master}; git rebase -i $branch; }; f"
 
+  # stash local changes, pull (supporting arguments like --rebase), and pop the stash to reapply changes
+  spp = "!f() { arguments=${1}; git stash; git pull $arguments; git stash pop; }; f"
+
   fun = fetch
 
   remove-orig = "!f() { find . -name '*.orig' -delete; }; f"
