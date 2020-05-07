@@ -15,6 +15,9 @@ To add it to all repos, run this command anywhere on the command line.
 git config --global include.path "path\to\gitconfig"
 ```
 
+# Updates
+In order to update your list of aliases, simply run `git pull` inside of this repo on your local machine. All of your git repos that utilize these aliases will now be able to use the new ones.
+
 # Aliases
 
 ## git co \<branch|commit>
