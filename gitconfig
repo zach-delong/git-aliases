@@ -29,3 +29,5 @@
   fun = fetch
 
   remove-orig = "!f() { find . -name '*.orig' -delete; }; f"
+
+  clean-branch = "!f() { branch=${1-master}; git reset --hard origin/$branch; git pull; }; f"
