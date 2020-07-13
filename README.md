@@ -73,3 +73,9 @@ Shows the changes introduced by the commit specified by the `commit_hash` argume
 `git spp --rebase`
 ### Description
 Stashes local changes, pulls, then pops stash to re-apply the stashed changes. The `git pull` command can be passed arguments using the `pull_arguments` specified after `git spp`
+
+## find-wthered-branches
+### Example Usage
+`git find-withered-branches`
+### Description
+Prints the remote branches with the 10 oldest heads. Can be used to find old, "withered" branches that should be deleted from the remote.

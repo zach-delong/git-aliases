@@ -30,4 +30,6 @@
 
   remove-orig = "!f() { find . -name '*.orig' -delete; }; f"
 
-  clean-branch = "!f() { branch=${1-master}; git reset --hard origin/$branch; git pull; }; f"
+  clean-branch = "!f() { branch=${1-master}; git clean -dfx; git reset --hard origin/$branch; git pull; }; f"
+
+  find-withered-branches = "for-each-ref --merged=master --sort=committerdate --count 10 --format='%(objectname) %(objecttype) %(refname) %(authorname) %(authordate)' refs/remotes/"
