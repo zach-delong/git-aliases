@@ -32,4 +32,6 @@
 
   clean-branch = "!f() { branch=${1-main}; git clean -dfx; git reset --hard origin/$branch; git pull; }; f"
 
-  find-withered-branches = "for-each-ref --merged=main --sort=committerdate --count 10 --format='%(objectname) %(objecttype) %(refname) %(authorname) %(authordate)' refs/remotes/"
+  find-withered-branches = "for-each-ref --sort=committerdate --count 10 --format='%(objectname) %(objecttype) %(refname) %(authorname) %(authordate)' refs/remotes/"
+
+  ahead-behind = "!f() { branchName=${1-main}; secondBranchName=${2-origin/main}; git rev-list --left-right --count $secondBranchName...$branchName; }; f"
