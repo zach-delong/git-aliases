@@ -34,4 +34,4 @@
 
   find-withered-branches = "for-each-ref --sort=committerdate --count 10 --format='%(objectname) %(objecttype) %(refname) %(authorname) %(authordate)' refs/remotes/"
 
-  ahead-behind = "!f() { branchName=${1-main}; secondBranchName=${2-origin/main}; git rev-list --left-right --count $branchName...$secondBranchName; }; f"
+  ahead-behind = "!f() { branchName=$(git currentbranch); secondBranchName=${1-origin/main}; git rev-list --left-right --count $branchName...$secondBranchName; }; f"

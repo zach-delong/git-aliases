@@ -79,3 +79,10 @@ Stashes local changes, pulls, then pops stash to re-apply the stashed changes. T
 `git find-withered-branches`
 ### Description
 Prints the remote branches with the 10 oldest heads. Can be used to find old, "withered" branches that should be deleted from the remote.
+
+
+## ahead-behind [branch]
+### Example Usage
+`git ahead-behind origin/main`
+### Description
+Shows commits 'ahead' and 'behind' of the current branch and the provided remote branch. Defaults to origin/main if not provided, and automatically infers the current branch.
