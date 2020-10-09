@@ -74,7 +74,7 @@ Shows the changes introduced by the commit specified by the `commit_hash` argume
 ### Description
 Stashes local changes, pulls, then pops stash to re-apply the stashed changes. The `git pull` command can be passed arguments using the `pull_arguments` specified after `git spp`
 
-## find-wthered-branches
+## find-withered-branches
 ### Example Usage
 `git find-withered-branches`
 ### Description
