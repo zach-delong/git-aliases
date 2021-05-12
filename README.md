@@ -86,3 +86,9 @@ Prints the remote branches with the 10 oldest heads. Can be used to find old, "w
 `git ahead-behind origin/main`
 ### Description
 Shows commits 'ahead' and 'behind' of the current branch and the provided remote branch. Defaults to origin/main if not provided, and automatically infers the current branch.
+
+## soft-clean 
+### Example Usage
+`git soft-clean` 
+### Description
+Attempts to clean a project without removing commonly locally changed files. Currently excludes web.config and appsettings.json
