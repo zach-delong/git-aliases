@@ -1,8 +1,8 @@
 [alias]
 	co = checkout
 
-  # Check out main and pull
-  comp = "!f() { git checkout main; git pull $@; }; f"
+  # Check out main and pull. Falls back to master if main is not a valid pathspec.
+  comp = "!f() { git checkout main; [ $? -ne 0 ] && git checkout master; git pull $@; }; f"
 
   # Get current branch name
   currentbranch = rev-parse --abbrev-ref HEAD
