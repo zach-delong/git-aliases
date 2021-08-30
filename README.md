@@ -92,3 +92,12 @@ Shows commits 'ahead' and 'behind' of the current branch and the provided remote
 `git soft-clean` 
 ### Description
 Attempts to clean a project without removing commonly locally changed files. Currently excludes web.config and appsettings.json
+
+## delete-branches
+
+### Example Usage
+`git delete-branches [pattern]`
+
+### Description
+
+Deletes all local branches that match the pattern.  Pattern follows all `grep` rules.
