@@ -101,3 +101,11 @@ Attempts to clean a project without removing commonly locally changed files. Cur
 ### Description
 
 Deletes all local branches that match the pattern.  Pattern follows all `grep` rules.
+
+## l
+
+### example usage
+`git l`
+
+### Description
+Runs `git log --oneline --graph`

@@ -39,3 +39,5 @@
   soft-clean = "clean -dfx -e web.config -e appsettings.json"
 
   delete-branches = "!f() { pattern=${1-feature}; git branch | grep $pattern | xargs git branch -D; }; f"
+
+  l = "log --graph --oneline"
