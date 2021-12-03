@@ -36,7 +36,7 @@ Display the name of the currently checked out branch.
 ### Example Usage
 `git comp --rebase`
 ### Description
-Checks out the main branch and executes a pull. If any `pull_arguments` are specified, these will be proxied to the `git pull` command. If main is not a valid branch, it falls back to using main.
+Checks out the main branch and executes a pull. If any `pull_arguments` are specified, these will be proxied to the `git pull` command. If main is not a valid branch, it falls back to using master (legacy standard).
 
 ## git graph
 ### Example Usage
