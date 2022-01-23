@@ -22,7 +22,7 @@ In order to update your list of aliases, simply run `git pull` inside of this re
 
 ## git co \<branch|commit>
 ### Example Usage
-`git co master`
+`git co main`
 ### Description
 Checks out a specific branch or commit. Short-hand for `git checkout <branch|commit>`.
 
@@ -36,7 +36,7 @@ Display the name of the currently checked out branch.
 ### Example Usage
 `git comp --rebase`
 ### Description
-Checks out the main branch and executes a pull. If any `pull_arguments` are specified, these will be proxied to the `git pull` command. If main is not a valid branch, it falls back to using master.
+Checks out the main branch and executes a pull. If any `pull_arguments` are specified, these will be proxied to the `git pull` command. If main is not a valid branch, it falls back to using master (legacy standard).
 
 ## git graph
 ### Example Usage
@@ -58,9 +58,9 @@ Creates and checks out a new feature branch with the name `feature/work_item`. D
 
 ## git rib [branch_name]
 ### Example Usage
-`git rib master`
+`git rib main`
 ### Description
-Begins the process of interactive rebasing the current branch against the `branch_name` argument. Defaults to `master` if no `branch_name` argument is specified.
+Begins the process of interactive rebasing the current branch against the `branch_name` argument. Defaults to `main` if no `branch_name` argument is specified.
 
 ## show-diff [commit_hash]
 ### Example Usage

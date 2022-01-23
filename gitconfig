@@ -1,7 +1,7 @@
 [alias]
 	co = checkout
 
-  # Check out main and pull. Falls back to master if main is not a valid pathspec.
+  # Check out main and pull. Falls back to master (legacy standard) if main is not a valid pathspec.
   comp = "!f() { git checkout main; [ $? -ne 0 ] && git checkout master; git pull $@; }; f"
 
   # Get current branch name
