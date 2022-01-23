@@ -1,8 +1,8 @@
 [alias]
 	co = checkout
 
-  # Check out main and pull. Falls back to master (legacy standard) if main is not a valid pathspec.
-  comp = "!f() { git checkout main; [ $? -ne 0 ] && git checkout master; git pull $@; }; f"
+  # Check out $(git default-branch) and pull. Falls back to master (legacy standard) if $(git default-branch) is not a valid pathspec.
+  comp = "!f() { git checkout $(git default-branch); [ $? -ne 0 ] && git checkout master; git pull $@; }; f"
 
   # Get current branch name
   currentbranch = rev-parse --abbrev-ref HEAD
@@ -20,8 +20,8 @@
   # checkout a new feature branch
   feature = "!f() { name=${1-tmp}; git checkout -b feature/$name; }; f"
   
-  # interactive rebase the currently checked out branch against the branch specified to the rib command, or main is a branch is not specified
-  rib = "!f() { branch=${1-main}; git rebase -i $branch; }; f"
+  # interactive rebase the currently checked out branch against the branch specified to the rib command, or $(git default-branch) is a branch is not specified
+  rib = "!f() { branch=${1-$(git default-branch)}; git rebase -i $branch; }; f"
 
   # stash local changes, pull (supporting arguments like --rebase), and pop the stash to reapply changes
   spp = "!f() { arguments=${1}; git stash; git pull $arguments; git stash pop; }; f"
@@ -30,14 +30,16 @@
 
   remove-orig = "!f() { find . -name '*.orig' -delete; }; f"
 
-  clean-branch = "!f() { branch=${1-main}; git clean -dfx; git reset --hard origin/$branch; git pull; }; f"
+  clean-branch = "!f() { branch=${1-$(git default-branch)}; git clean -dfx; git reset --hard origin/$branch; git pull; }; f"
 
-  find-withered-branches = "for-each-ref --merged=origin/main --sort=committerdate --count 1000 --format='%(objectname) %(objecttype) %(refname) %(authorname) %(authordate)' refs/remotes/"
+  find-withered-branches = "for-each-ref --merged=origin/$(git default-branch) --sort=committerdate --count 1000 --format='%(objectname) %(objecttype) %(refname) %(authorname) %(authordate)' refs/remotes/"
 
-  ahead-behind = "!f() { branchName=$(git currentbranch); secondBranchName=${1-origin/main}; git rev-list --left-right --count $branchName...$secondBranchName; }; f"
+  ahead-behind = "!f() { branchName=$(git currentbranch); secondBranchName=${1-origin/$(git default-branch)}; git rev-list --left-right --count $branchName...$secondBranchName; }; f"
 
   soft-clean = "clean -dfx -e web.config -e appsettings.json"
 
   delete-branches = "!f() { pattern=${1-feature}; git branch | grep $pattern | xargs git branch -D; }; f"
 
   l = "log --graph --oneline"
+
+  default-branch = "!f() { git remote show origin | grep 'HEAD branch' | cut -d' ' -f5; }; f"
