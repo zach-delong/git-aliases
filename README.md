@@ -91,7 +91,7 @@ Shows commits 'ahead' and 'behind' of the current branch and the provided remote
 ### Example Usage
 `git soft-clean` 
 ### Description
-Attempts to clean a project without removing commonly locally changed files. Currently excludes web.config and appsettings.json
+Attempts to clean a project without removing commonly locally changed files. Currently excludes web.config, appsettings.json, and app-config.json
 
 ## delete-branches
 
