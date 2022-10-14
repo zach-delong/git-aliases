@@ -36,7 +36,7 @@
 
   ahead-behind = "!f() { branchName=$(git currentbranch); secondBranchName=${1-origin/$(git default-branch)}; git rev-list --left-right --count $branchName...$secondBranchName; }; f"
 
-  soft-clean = "clean -dfx -e web.config -e appsettings.json -e app-config.json"
+  soft-clean = "clean -dfx -e web.config -e appsettings.json -e app-config.json -e app.config"
 
   delete-branches = "!f() { pattern=${1-feature}; git branch | grep $pattern | xargs git branch -D; }; f"
 
