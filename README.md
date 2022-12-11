@@ -109,3 +109,12 @@ Deletes all local branches that match the pattern.  Pattern follows all `grep` r
 
 ### Description
 Runs `git log --oneline --graph`
+
+## Compare-branch
+
+### Example Usage
+`git compare-branch origin/main`
+
+### Description
+
+List all commits on this branch but not on the target branch (Defaults to your default branch)

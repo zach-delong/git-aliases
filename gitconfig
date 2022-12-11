@@ -43,3 +43,5 @@
   l = "log --graph --oneline"
 
   default-branch = "!f() { git remote show origin | grep 'HEAD branch' | cut -d' ' -f5; }; f"
+
+  compare-branch = "!f() { branchName=$(git default-branch); git log --stat origin/$branchName..; }; f"
