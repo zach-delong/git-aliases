@@ -1,5 +1,5 @@
 [alias]
-	co = checkout
+  co = checkout
 
   # Check out $(git default-branch) and pull. Falls back to master (legacy standard) if $(git default-branch) is not a valid pathspec.
   comp = "!f() { git checkout $(git default-branch); [ $? -ne 0 ] && git checkout master; git pull $@; }; f"
@@ -45,3 +45,5 @@
   default-branch = "!f() { git remote show origin | grep 'HEAD branch' | cut -d' ' -f5; }; f"
 
   compare-branch = "!f() { branchName=$(git default-branch); git log --stat origin/$branchName..; }; f"
+
+  s = "status -sb"

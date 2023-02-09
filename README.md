@@ -118,3 +118,15 @@ Runs `git log --oneline --graph`
 ### Description
 
 List all commits on this branch but not on the target branch (Defaults to your default branch)
+## s
+
+### example usage
+`git s`
+
+### Description
+Runs a simplified (compact) status command. Output looks like this:
+```
+## master...origin/master [behind 1]
+ M README.md
+ M gitconfig
+```
