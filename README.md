@@ -26,9 +26,9 @@ In order to update your list of aliases, simply run `git pull` inside of this re
 ### Description
 Checks out a specific branch or commit. Short-hand for `git checkout <branch|commit>`.
 
-## git currentbranch
+## git current-branch
 ### Example Usage
-`git currentbranch`
+`git current-branch`
 ### Description
 Display the name of the currently checked out branch.
 

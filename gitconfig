@@ -5,7 +5,7 @@
   comp = "!f() { git checkout $(git default-branch); [ $? -ne 0 ] && git checkout master; git pull $@; }; f"
 
   # Get current branch name
-  currentbranch = rev-parse --abbrev-ref HEAD
+  current-branch = rev-parse --abbrev-ref HEAD
 
   # fancy log
   # borrowed from https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
@@ -34,7 +34,7 @@
 
   find-withered-branches = "for-each-ref --merged=origin/$(git default-branch) --sort=committerdate --count 1000 --format='%(objectname) %(objecttype) %(refname) %(authorname) %(authordate)' refs/remotes/"
 
-  ahead-behind = "!f() { branchName=$(git currentbranch); secondBranchName=${1-origin/$(git default-branch)}; git rev-list --left-right --count $branchName...$secondBranchName; }; f"
+  ahead-behind = "!f() { branchName=$(git current-branch); secondBranchName=${1-origin/$(git default-branch)}; git rev-list --left-right --count $branchName...$secondBranchName; }; f"
 
   soft-clean = "!f() { echo $soft_clean_files | xargs git clean -dfx -e ; }; f"
 
@@ -48,4 +48,4 @@
 
   s = "status -sb"
 
-  publish = "!f() { remoteName=${1-origin}; branchName=$(git currentbranch); git push -u $remoteName $branchName; }; f"
+  publish = "!f() { remoteName=${1-origin}; branchName=$(git current-branch); git push -u $remoteName $branchName; }; f"
