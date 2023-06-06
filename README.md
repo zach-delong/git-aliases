@@ -130,3 +130,12 @@ Runs a simplified (compact) status command. Output looks like this:
  M README.md
  M gitconfig
 ```
+
+## publish
+
+
+### example usage
+`git publish`
+
+### Description
+This alias is to publish a new branch to a remote the first time. Takes as a parameter, the remote to push to.  It will try to push a branch that matches the current branch's name to the given remote (defaulting to "origin").

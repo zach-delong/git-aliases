@@ -36,7 +36,7 @@
 
   ahead-behind = "!f() { branchName=$(git currentbranch); secondBranchName=${1-origin/$(git default-branch)}; git rev-list --left-right --count $branchName...$secondBranchName; }; f"
 
-  soft-clean = "clean -dfx -e web.config -e appsettings.json -e app-config.json -e app.config"
+  soft-clean = "!f() { echo $soft_clean_files | xargs git clean -dfx -e ; }; f"
 
   delete-branches = "!f() { pattern=${1-feature}; git branch | grep $pattern | xargs git branch -D; }; f"
 
@@ -47,3 +47,5 @@
   compare-branch = "!f() { branchName=$(git default-branch); git log --stat origin/$branchName..; }; f"
 
   s = "status -sb"
+
+  publish = "!f() { remoteName=${1-origin}; branchName=$(git currentbranch); git push -u $remoteName $branchName; }; f"
